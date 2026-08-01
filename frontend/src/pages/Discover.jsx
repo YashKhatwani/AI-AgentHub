@@ -82,8 +82,8 @@ export default function Discover({ openAgent }) {
       setError('')
       try {
         const [agentsResponse, toolsResponse] = await Promise.allSettled([
-          fetch('https://github-cloud-run-service-884188157680.europe-west1.run.app/agents'),
-          fetch('https://github-cloud-run-service-884188157680.europe-west1.run.app/tools'),
+          fetch('http://127.0.0.1:8000/agents'),
+          fetch('http://127.0.0.1:8000/tools'),
         ])
 
         let agentItems = []

@@ -116,7 +116,7 @@ export async function getMonitoringOverview() {
 export async function getAgents() {
   if (USE_API) {
     try {
-      const res = await fetch('https://github-cloud-run-service-884188157680.europe-west1.run.app/agents')
+      const res = await fetch('http://127.0.0.1:8000/agents')
       if (!res.ok) {
         return getMockAgents()
       }

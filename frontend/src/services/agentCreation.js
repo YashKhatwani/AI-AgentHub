@@ -71,7 +71,7 @@ export async function saveAgent(agent) {
   await delay()
   if (USE_API) {
     const payload = toBackendPayload(agent)
-    const response = await fetch('https://github-cloud-run-service-884188157680.europe-west1.run.app/agents', {
+    const response = await fetch('/agents', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -94,7 +94,7 @@ export async function saveAgent(agent) {
 export async function createAgentVisualization(query) {
   await delay()
 
-  const response = await fetch('https://github-cloud-run-service-884188157680.europe-west1.run.app/interact', {
+  const response = await fetch('http://127.0.0.1:8000/interact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query }),
